@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<canvas id="myCanvas" width="800" height="800" style="border:1px solid #000000;">
+Your browser does not support the HTML canvas tag.
+</canvas>
+
+<script>
+const canvas = document.getElementById("myCanvas"); 
+const ctx = canvas.getContext("2d");
+
+// Start precisely in the middle of the canvas
+let xloc = canvas.width / 2;
+let yloc = canvas.height / 2;
+
+// Set up the pen stroke
+ctx.strokeStyle = "green";
+ctx.lineWidth = 4;
+
+// Start the drawing path at the center
+ctx.beginPath();
+ctx.moveTo(xloc, yloc);
+
+function step() {
+    // Generate a random integer between 0 and 3
+    const choice = Math.floor(Math.random() * 4);
+    
+    // Determine the step size
+    const stepSize = 4;
+
+    // Update location based on the random choice
+    if (choice === 1) {
+        xloc += stepSize; // Move Right
+    } else if (choice === 2) {
+        xloc -= stepSize; // Move Left
+    } else if (choice === 3) {
+        yloc += stepSize; // Move Down
+    } else if (choice === 0) {
+        yloc -= stepSize; // Move Up
+    }
+
+    // Draw a line to the new location
+    ctx.lineTo(xloc, yloc);
+    ctx.stroke();
+
+    // Loop the function recursively for smooth animation
+    requestAnimationFrame(step);
+}
+
+// Kick off the walking animation
+step();
+</script>
+<!--debugged by Gemini-->
+</body>
+</html>

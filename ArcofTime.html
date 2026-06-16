@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Arc Of Time The Time.Incarnation Question</title>
+</head>
+<style>
+#canvas, #canvas2 {object-fit: contain;   max-width: 1400px;
+      max-height: 1400px;  align-items: center; text-align: center;
+    
+      margin-left:auto; margin-bottom: 3%; 
+    }
+
+    h1 {font-size: 55px; text-decoration: dashed; text-shadow: 2px 2px rgb(224, 6, 6); }
+
+      .container-main {margin: auto auto; border: #bd2525 20px solid; text-align: center;}
+</style>
+<body>
+
+    <!-- This is The Geomap of a Mathematical representation of time based on multiple objects This is 
+    to represent and practice object oriented programming buidling multiple shapes using canvas and logic. 
+    CSS calc and variations of Geo Mapping. 
+    
+    ##FORMULA
+    $Time = [1000,100,50,10,365, 12, 4, 7,24,12,1,60,60...] 
+    Time values as Millienia, century, half-century, decade, year, 
+    months, weeks,days, half-day, Hours, minutes, seconds...
+
+    For now 13 objects ... 
+
+    OBJECTIVE : DISPLAY CANVAS 13 OBJECTS AS ARRAY in CANVAS ID. 
+    converted all to years Map
+
+    max 365 * 1000 = 365,000 days == 3650px
+
+    new base is 1 year = 1
+    Months is 12 
+    Weeks == 52 / year 
+     Example Days 365
+     hours 24/day * 365 = 8760 square 
+     Minutes 60/hour * 24 *365 = 525600 square
+     Seconds 60 * 60 * 24 * 365 = 74 as squared
+    -->
+<div class="container-main">
+<h1 style="color:rgb(26, 4, 4); text-align: center;">TIME MANDALA ARC</h1>
+        <!--LImit high widht numbers are not allowed -->
+<canvas id="canvas" width="3650" height="6650" style="border:20px solid #bd2525; background-color:black;">
+</canvas>
+<br><h1 style="color:rgb(26, 4, 4); text-align: center;">TIME MANDALA RECT</h1>
+<canvas id="canvas2" width="3650" height="2650" style="border:20px solid #bd2525; background-color:black;">
+</canvas>
+
+
+
+</div>
+
+</body>
+
+<!--scripts -->
+
+<script>
+var t = document.getElementById("canvas");
+var ctx = t.getContext("2d");
+var u = document.getElementById("canvas2");
+var ctx2 = u.getContext("2d");
+
+//StrokesizeandColor 
+ctx.strokeStyle = '#ffffffff'; 
+ctx.fillStyle = "blue";
+ctx.lineWidth= 4;
+ctx2.strokeStyle = '#0000000'; 
+ctx2.fillStyle = "blue";
+ctx2.lineWidth= 4;
+
+const x = 3650/2;
+const y = 3650/2;
+//7 world divisions increment of 17
+const n1 = 1.15;
+const n2 = 1.32;
+const n3 = 1.49;
+const n4 = 1.66;
+const n5 = 1.83;
+const n6 = 2;
+
+
+const a = (3650)/3;
+const b = (1650)/3;
+
+//Millenia
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,1000, 0,Math.PI *2);ctx.stroke();
+ctx.arc (x,y*n1,1000, 0,Math.PI* 2);
+ctx.arc (x,y*n2,1000, 0,Math.PI* 2);
+ctx.arc (x,y*n3,1000, 0,Math.PI* 2);
+ctx.arc (x,y*n4,1000, 0,Math.PI* 2);
+ctx.arc (x,y*n5,1000, 0,Math.PI* 2);
+ctx.arc (x,y*n6,1000, 0,Math.PI* 2);ctx.stroke();
+
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,1000,1500,0);ctx2.stroke();
+ctx2.rect (a,b*n1,1000, 1500,);
+ctx2.rect (a,b*n2,1000, 1500,);
+ctx2.rect (a,b*n3,1000, 1500,);
+ctx2.rect (a,b*n4,1000, 1500,);
+ctx2.rect (a,b*n5,1000, 1500,);
+ctx2.rect (a,b*n6,1000, 1500,);
+ctx2.stroke();
+
+//Century
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,100, 0,Math.PI *2);ctx.stroke();
+ctx.arc (x,y*n1,100, 0,Math.PI* 2);
+ctx.arc (x,y*n2,100, 0,Math.PI* 2);
+ctx.arc (x,y*n3,100, 0,Math.PI* 2);
+ctx.arc (x,y*n4,100, 0,Math.PI* 2);
+ctx.arc (x,y*n5,100, 0,Math.PI* 2);
+ctx.arc (x,y*n6,100, 0,Math.PI* 2);
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,100,150,0);ctx2.stroke();
+ctx2.rect (a,b*n1,100, 150,);
+ctx2.rect (a,b*n2,100, 150,);
+ctx2.rect (a,b*n3,100, 150,);
+ctx2.rect (a,b*n4,100, 150,);
+ctx2.rect (a,b*n5,100, 150,);
+ctx2.rect (a,b*n6,100, 150,);
+ctx2.stroke();
+
+
+//halfcentury
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,50, 0,Math.PI *2);
+ctx.arc (x,y*n1,50, 0,Math.PI* 2);
+ctx.arc (x,y*n2,50, 0,Math.PI* 2);
+ctx.arc (x,y*n3,50, 0,Math.PI* 2);
+ctx.arc (x,y*n4,50, 0,Math.PI* 2);
+ctx.arc (x,y*n5,50, 0,Math.PI* 2);
+ctx.arc (x,y*n6,50, 0,Math.PI* 2);
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,50,25,0);ctx2.stroke();
+ctx2.rect (a,b*n1,50, 25,);
+ctx2.rect (a,b*n2,50, 25,);
+ctx2.rect (a,b*n3,50, 25,);
+ctx2.rect (a,b*n4,50, 25,);
+ctx2.rect (a,b*n5,50, 25,);
+ctx2.rect (a,b*n6,50, 25,);
+ctx2.stroke();
+
+//decade
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,10, 0,Math.PI *2);
+ctx.arc (x,y*n1,10, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,10, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,10, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,10, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,10, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,10, 0,Math.PI* 2); 
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,10,5,0);
+ctx2.rect (a,b*n1,10, 5,);
+ctx2.rect (a,b*n2,10, 5,);
+ctx2.rect (a,b*n3,10, 5,);
+ctx2.rect (a,b*n4,10, 5,);
+ctx2.rect (a,b*n5,10, 5,);
+ctx2.rect (a,b*n6,10, 5,);
+ctx2.stroke();
+
+
+//year 
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,1, 0,Math.PI *2);
+ctx.arc (x,y*n1,1, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,1, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,1, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,1, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,1, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,1, 0,Math.PI* 2); 
+ctx.stroke();
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,1,1,0);
+ctx2.rect (a,b*n1,1, 1,);
+ctx2.rect (a,b*n2,1, 1,);
+ctx2.rect (a,b*n3,1, 1,);
+ctx2.rect (a,b*n4,1, 1,);
+ctx2.rect (a,b*n5,1, 1,);
+ctx2.rect (a,b*n6,1, 1,);
+ctx2.stroke();
+
+
+
+//Months
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,12, 0,Math.PI *2);
+ctx.arc (x,y*n1,12, 0,Math.PI* 2);
+ctx.arc (x,y*n2,12, 0,Math.PI* 2);
+ctx.arc (x,y*n3,12, 0,Math.PI* 2);
+ctx.arc (x,y*n4,12, 0,Math.PI* 2);
+ctx.arc (x,y*n5,12, 0,Math.PI* 2);
+ctx.arc (x,y*n6,12, 0,Math.PI* 2);
+ ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,12,24,0);
+ctx2.rect (a,b*n1,12, 24,);
+ctx2.rect (a,b*n2,12, 24,);
+ctx2.rect (a,b*n3,12, 24,);
+ctx2.rect (a,b*n4,12, 24,);
+ctx2.rect (a,b*n5,12, 24,);
+ctx2.rect (a,b*n6,12, 24,);
+ctx2.stroke();
+
+//weeks
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,52, 0,Math.PI *2);
+ctx.arc (x,y*n1,52, 0,Math.PI* 2);
+ctx.arc (x,y*n2,52, 0,Math.PI* 2);
+ctx.arc (x,y*n3,52, 0,Math.PI* 2);
+ctx.arc (x,y*n4,52, 0,Math.PI* 2);
+ctx.arc (x,y*n5,52, 0,Math.PI* 2);
+ctx.arc (x,y*n6,52, 0,Math.PI* 2);
+ ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,52,104,0);
+ctx2.rect (a,b*n1,52, 104,);
+ctx2.rect (a,b*n2,52, 104,);
+ctx2.rect (a,b*n3,52, 104,);
+ctx2.rect (a,b*n4,52, 104,);
+ctx2.rect (a,b*n5,52, 104,);
+ctx2.rect (a,b*n6,52, 104,);
+
+ctx2.stroke();
+
+
+//days
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,365, 0,Math.PI *2);
+ctx.arc (x,y*n1,365, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,365, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,365, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,365, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,365, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,365, 0,Math.PI* 2); 
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,365,730,0);
+ctx2.rect (a,b*n1,365, 730,);
+ctx2.rect (a,b*n2,365, 730,);
+ctx2.rect (a,b*n3,365, 730,);
+ctx2.rect (a,b*n4,365, 730,);
+ctx2.rect (a,b*n5,365, 730,);
+ctx2.rect (a,b*n6,365, 730,);
+ctx2.stroke();
+
+
+//hours
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,93.5, 0,Math.PI *2);
+ctx.arc (x,y*n1,93.5, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,93.5, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,93.5, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,93.5, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,93.5, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,93.5, 0,Math.PI* 2); 
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,93.5,187,0);
+ctx2.rect (a,b*n1,93.5, 187,);
+ctx2.rect (a,b*n2,93.5, 187,);
+ctx2.rect (a,b*n3,93.5, 187,);
+ctx2.rect (a,b*n4,93.5, 187,);
+ctx2.rect (a,b*n5,93.5, 187,);
+ctx2.rect (a,b*n6,93.5, 187,);
+ctx2.stroke();
+
+
+//minutes square root 
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,724, 0,Math.PI *2);
+ctx.arc (x,y*n1,724, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,724, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,724, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,724, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,724, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,724, 0,Math.PI* 2); 
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,724,1448,0);
+ctx2.rect (a,b*n1,724, 1448,);
+ctx2.rect (a,b*n2,724, 1448,);
+ctx2.rect (a,b*n3,724, 1448,);
+ctx2.rect (a,b*n4,724, 1448,);
+ctx2.rect (a,b*n5,724, 1448,);
+ctx2.rect (a,b*n6,724, 1448,);
+ctx2.stroke();
+
+//seconds double square root
+ctx.beginPath();
+ // arc(x, y, radius, startAngle, endAngle)
+ctx.arc (x,y,75, 0,Math.PI *2);
+ctx.arc (x,y*n1,75, 0,Math.PI* 2); 
+ctx.arc (x,y*n2,75, 0,Math.PI* 2); 
+ctx.arc (x,y*n3,75, 0,Math.PI* 2); 
+ctx.arc (x,y*n4,75, 0,Math.PI* 2); 
+ctx.arc (x,y*n5,75, 0,Math.PI* 2); 
+ctx.arc (x,y*n6,75, 0,Math.PI* 2); 
+ctx.stroke();
+
+//Rect (x,y,L,W,void)
+ctx2.beginPath();
+ctx2.rect(a,b,75,75,0);
+ctx2.rect (a,b*n1,75, 150,);
+ctx2.rect (a,b*n2,75, 150,);
+ctx2.rect (a,b*n3,75, 150,);
+ctx2.rect (a,b*n4,75, 150,);
+ctx2.rect (a,b*n5,75, 150,);
+ctx2.rect (a,b*n6,75, 150,);
+ctx2.stroke();
+
+
+/*
+ctx.beginPath();
+ctx.moveTo (150,150);
+ctx.lineTo (250,250);
+ctx.stroke();*/
+
+
+</script>
+
+</html>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>2026px Concentric Tunnel</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      overflow: auto;
+    }
+    /* Scaling the massive canvas down visually so it fits on screen */
+    canvas {
+      background-color: #000000;
+      box-shadow: 0 0 20px rgba(220, 35, 35, 0.916);
+      max-width: 95vw;
+      max-height: 95vh;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- The canvas is built large enough to hold the 2026px diameter -->
+  <canvas id="tunnelCanvas" width="3400" height="3400"></canvas>
+
+  <script>
+    const canvas = document.getElementById('tunnelCanvas');
+    const ctx = canvas.getContext('2d');
+
+    // Find the exact center of the 2100x2100 canvas
+    const centerX = canvas.width / 2 ;
+    const centerY = canvas.height / 2;
+    const centerA = canvas.width / 2 + 365;
+    const centerB = canvas.height / 2 ;
+    const centerc = canvas.width / 2 - 365;
+    const centerd = canvas.height / 2 ;
+
+    // Styling the line to look like a glowing wireframe
+    ctx.strokeStyle = '#fffdfd'; 
+    ctx.lineWidth = 4;
+
+    // Initialize the starting diameter
+    let diameter = 2026;
+
+    // Loop halving the diameter until it's a sub-pixel size
+    while (diameter >= 1) {
+      let radius = diameter / 2;
+      
+      ctx.beginPath();
+      // arc(x, y, radius, startAngle, endAngle)
+      ctx.arc(centerX, centerY, radius, 0, Math.PI * 2);
+      ctx.arc(centerA , centerB, radius, 0 , Math.PI *2);
+      ctx.arc(centerc , centerd, radius, 0 , Math.PI *2);
+      ctx.stroke();
+  
+      // Cut the diameter in half for the next ring
+      diameter = diameter / 2; 
+    }
+  </script>
+
+</body>
+</html>

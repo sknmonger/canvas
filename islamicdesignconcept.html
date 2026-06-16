@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Geometric Canvas Art</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    canvas {
+      background-color: #000;
+    }
+  </style>
+</head>
+<body>
+
+  <canvas id="geomCanvas" width="800" height="800"></canvas>
+
+  <script>
+    const canvas = document.getElementById('geomCanvas');
+    const ctx = canvas.getContext('2d');
+    
+    // Find the center of the canvas
+    const cx = canvas.width / 2;
+    const cy = canvas.height / 2;
+
+    // Styling: Translucent white allows overlapping lines to glow brighter
+    ctx.strokeStyle = 'rgba(255, 255, 255, 0.4)';
+    ctx.lineWidth = 1.5;
+
+    // Helper function to draw a circle
+    function drawCircle(x, y, radius) {
+      ctx.beginPath();
+      ctx.arc(x, y, radius, 0, Math.PI * 2);
+      ctx.stroke();
+    }
+
+    // Helper function to draw a square from its center
+    function drawSquare(x, y, size) {
+      ctx.beginPath();
+      ctx.rect(x - size / 2, y - size / 2, size, size);
+      ctx.stroke();
+    }
+
+    // --- DRAWING LOGIC ---
+
+    const R = 150; // The primary radius and offset distance
+
+    // 1. Draw the 4 Macro Cardinal Circles
+    drawCircle(cx, cy - R, R); // Top
+    drawCircle(cx, cy + R, R); // Bottom
+    drawCircle(cx - R, cy, R); // Left
+    drawCircle(cx + R, cy, R); // Right
+
+    // 2. Draw the 4 Macro Bounding Squares
+    drawSquare(cx, cy - R, R * 2);
+    drawSquare(cx, cy + R, R * 2);
+    drawSquare(cx - R, cy, R * 2);
+    drawSquare(cx + R, cy, R * 2);
+
+    // 3. Draw the Micro Grid (Nested smaller circles)
+    const microR1 = 25; // Inner micro circle
+    const microR2 = 40; // Outer micro circle
+    const step = 45;    // Spacing between micro circles
+
+    // Create a 5x5 grid of concentric circles in the center
+    for(let i = -2; i <= 2; i++) {
+        for(let j = -2; j <= 2; j++) {
+            
+            // Calculate grid positions
+            let gridX = cx + (i * step);
+            let gridY = cy + (j * step);
+
+            // Draw the concentric pairs
+            drawCircle(gridX, gridY, microR1);
+            drawCircle(gridX, gridY, microR2);
+        }
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+
+<h1>My Canvas</h1>
+
+<!-- Add element here -->
+<canvas id="myCanvas" width="1000" height="1000" style="border: 1px solid black; background-color:  green;">
+
+</canvas> 
+<!-- Add script here -->
+<script>
+const a = document.getElementById("myCanvas");
+const line = a.getContext("2d");
+
+line.strokeStyle = '#ffffffff'; 
+line.fillStyle = "blue";
+line.lineWidth = 4;
+
+
+line.beginPath();
+line.fillRect(300,300,500,500);
+line.stroke();
+
+line.beginPath();
+line.moveTo(100, 100);
+line.lineTo(250, 250);
+line.stroke();
+</script>
+
+</body>
+</html>

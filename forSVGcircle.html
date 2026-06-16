@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>FOR LOOP AND WHILE LOOP CIRCL</title>
+
+</head>
+
+<style>
+.container-main, #for-loop, #while-loop {
+ background-color: rgb(6, 6, 58); text-align: center; width: 100%;
+   object-fit: contain; max-width: 100%; max-height: 80%; }
+
+</style>
+<!--For Loop create a pyramid displaying SVG circles using for loop and While loop-->
+<!-- Newline is For OUter and Dots is in For inner... 
+Relationship of Var Value > Condition > Var Update  is main Logic  
+-->
+<body>
+<div class="container-main">
+
+    <div id="for-loop">
+</div>
+  
+
+   <div id="while-loop"> 
+</div>
+
+</div>
+</body>
+<script>
+const a = document.getElementById("for-loop");
+const b = document.getElementById("while-loop");
+
+let htmlcontent = "";
+let newline = ""; 
+
+for (let x=1; x<=3; x++)
+{
+
+    for (let arc=100; arc <= 100; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  }
+
+    htmlcontent += "<br>";
+}
+
+
+a.innerHTML = htmlcontent;
+
+for (let x=1; x<=1; x++)
+{
+
+     for (let arc=90; arc <= 100; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  }
+
+     htmlcontent += "<br>";
+} 
+
+
+a.innerHTML = htmlcontent;
+
+
+for (let x=1; x<=2; x++)
+{
+
+    for (let arc=1; arc <=2; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  }
+
+     htmlcontent += "<br>";
+}
+
+
+a.innerHTML = htmlcontent;
+
+for (let x=1; x<=3; x++)
+{
+
+    for (let arc=1; arc <=1; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  }
+
+     htmlcontent += "<br>";
+}
+
+
+a.innerHTML = htmlcontent;
+
+
+for (let x=1; x<=1; x++)
+{
+
+    for (let arc=28; arc <=40; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  }
+
+      htmlcontent += "<br>";
+}
+
+
+a.innerHTML = htmlcontent;
+
+
+
+for (let x=1; x<=1; x++)
+{
+
+    for (let arc=1; arc <=12; arc++) {
+htmlcontent += `<svg width="80" height="80">
+<circle cx="40" cy="40" r="10" stroke="white" stroke-width="4" fill="white" />
+    </svg>`;  
+    }
+     htmlcontent += "<br>";
+}
+
+
+a.innerHTML = htmlcontent;
+
+
+
+
+
+let y = 0;
+let yhtmlcontent = "";
+
+ while (y <=5) {
+    yhtmlcontent += `
+    <svg width="400" height="120">
+  <rect x="10" y="10" width="200" height="100" stroke="red" stroke-width="6" fill="blue" />
+</svg><br>`;  
+ 
+y++;
+ }   
+b.innerHTML = yhtmlcontent;
+</script>
+</html>
+</html>
